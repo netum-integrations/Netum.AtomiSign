@@ -1,6 +1,7 @@
 # Netum.AtomiSign.Records
 
 Record task
+WORKFLOW TEST
 
 [![Records_build](https://github.com/FrendsPlatform/Netum.AtomiSign/actions/workflows/Records_test_on_main.yml/badge.svg)](https://github.com/FrendsPlatform/Netum.AtomiSign/actions/workflows/Records_test_on_main.yml)
 ![Coverage](https://app-github-custom-badges.azurewebsites.net/Badge?key=FrendsPlatform/Netum.AtomiSign/Netum.AtomiSign.Records|main)
