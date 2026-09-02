@@ -1,0 +1,28 @@
+name: Signatures_test_on_main
+permissions:
+  contents: read
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Netum.AtomiSign.Signatures/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Build
+        run: dotnet build
+        working-directory: Netum.AtomiSign.Signatures
+      - name: Test
+        run: dotnet test
+        working-directory: Netum.AtomiSign.Signatures
+
