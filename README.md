@@ -1,6 +1,6 @@
 # Netum.Truugo
 
-Frends tasks for calling Truugo API endpoints.
+Frends tasks for calling AtomiSign API endpoints.
 
 # Tasks
 
