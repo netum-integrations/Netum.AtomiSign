@@ -1,4 +1,4 @@
-# Netum.Truugo
+# Netum.AtomiSign
 
 Frends tasks for calling AtomiSign API endpoints.
 
