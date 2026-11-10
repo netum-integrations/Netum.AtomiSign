@@ -2,17 +2,17 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <LangVersion>latest</LangVersion>
-        <Version>1.0.1</Version>
+        <Version>1.0.2</Version>
         <Authors>Netum</Authors>
-        <Copyright>Copyright (c) 2026 Frends EiPaaS</Copyright>
+        <Copyright>Copyright (c) 2026 Netum</Copyright>
         <Company>Netum</Company>
-        <Product>Frends</Product>
+        <Product>Netum</Product>
         <PackageTags>Frends</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <Description>PDF task</Description>
+        <Description>Converts text content to a PDF/A document using the AtomiSign API.</Description>
         <PackageProjectUrl>https://frends.com/</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/FrendsPlatform/Netum.AtomiSign/tree/main/Netum.AtomiSign.PDF</RepositoryUrl>
+        <RepositoryUrl>https://github.com/netum-integrations/Netum.AtomiSign/tree/main/Netum.AtomiSign.PDF</RepositoryUrl>
         <Nullable>disable</Nullable>
         <NoWarn>
             CS1591, <!-- StyleCop SA1602 already enforces documentation for enum members -->

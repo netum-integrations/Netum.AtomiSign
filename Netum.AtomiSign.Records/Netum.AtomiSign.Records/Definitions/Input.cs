@@ -81,12 +81,12 @@ public class Input
     public DateTime? SendRemindersAt { get; set; }
 
     /// <summary>
-    /// Metadata to be stored within the record.
+    /// Metadata to be stored within the record as a JSON object.
     /// </summary>
-    /// <example>{ "customerId": "12345" }</example>
-    [DisplayFormat(DataFormatString = "Expression")]
+    /// <example>{"customerId":"12345"}</example>
+    [DisplayFormat(DataFormatString = "Text")]
     [UIHint(nameof(Method), "", Method.CreateRecord, Method.ReplaceRecord)]
-    public object Metadata { get; set; }
+    public string Metadata { get; set; } = string.Empty;
 
     /// <summary>
     /// Signing order.
@@ -107,8 +107,8 @@ public class Input
     /// <summary>
     /// Agents included in the record request body.
     /// </summary>
-    /// <example>new { givenName = "Jane", familyName = "Doe", email = "jane.doe@example.com", role = "author" }</example>
-    [DisplayFormat(DataFormatString = "Expression")]
+    /// <example>[{"givenName":"Jane","familyName":"Doe","email":"jane.doe@example.com","role":"author"}]</example>
+    [DisplayFormat(DataFormatString = "Text")]
     [UIHint(nameof(Method), "", Method.CreateRecord, Method.ReplaceRecord)]
     public string Agents { get; set; }
 

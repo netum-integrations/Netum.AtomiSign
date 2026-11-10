@@ -2,17 +2,17 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <LangVersion>latest</LangVersion>
-        <Version>1.0.5</Version>
+        <Version>1.0.6</Version>
         <Authors>Netum</Authors>
-        <Copyright>Copyright (c) 2026 Frends EiPaaS</Copyright>
+        <Copyright>Copyright (c) 2026 Netum</Copyright>
         <Company>Netum</Company>
-        <Product>Frends</Product>
+        <Product>Netum</Product>
         <PackageTags>Frends</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <Description>Record task</Description>
+        <Description>Creates, retrieves, lists, replaces, and deletes AtomiSign records.</Description>
         <PackageProjectUrl>https://frends.com/</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/FrendsPlatform/Netum.AtomiSign/tree/main/Netum.AtomiSign.Records</RepositoryUrl>
+        <RepositoryUrl>https://github.com/netum-integrations/Netum.AtomiSign/tree/main/Netum.AtomiSign.Records</RepositoryUrl>
         <Nullable>disable</Nullable>
         <NoWarn>
             CS1591, <!-- StyleCop SA1602 already enforces documentation for enum members -->

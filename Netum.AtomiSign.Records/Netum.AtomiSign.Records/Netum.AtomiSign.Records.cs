@@ -177,13 +177,26 @@ public static class AtomiSign
             input.Status,
             input.ExpiresAt,
             input.SendRemindersAt,
-            input.Metadata,
+            Metadata = NormalizeMetadata(input.Metadata),
             SigningOrder = GetSigningOrderValue(input.SigningOrder),
             SignaturePage = GetSignaturePageValue(input.SignaturePage),
             Agents = NormalizeAgents(input.Agents),
         };
 
         return JsonSerializer.Serialize(requestBody, JsonSerializerOptions);
+    }
+
+    private static object NormalizeMetadata(string metadata)
+    {
+        if (string.IsNullOrWhiteSpace(metadata))
+            return null;
+
+        var parsedMetadata = JsonSerializer.Deserialize<JsonElement>(metadata);
+
+        if (parsedMetadata.ValueKind != JsonValueKind.Object)
+            throw new ArgumentException("Metadata must be a JSON object.");
+
+        return parsedMetadata;
     }
 
     private static object NormalizeAgents(string agents)

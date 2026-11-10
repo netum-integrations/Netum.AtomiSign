@@ -2,17 +2,17 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <LangVersion>latest</LangVersion>
-        <Version>1.0.0</Version>
+        <Version>1.0.1</Version>
         <Authors>Netum</Authors>
-        <Copyright>Copyright (c) 2026 Frends EiPaaS</Copyright>
+        <Copyright>Copyright (c) 2026 Netum</Copyright>
         <Company>Netum</Company>
-        <Product>Frends</Product>
+        <Product>Netum</Product>
         <PackageTags>Frends</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <Description>Signatures task</Description>
+        <Description>Signs files using the AtomiSign API and returns the signed document.</Description>
         <PackageProjectUrl>https://frends.com/</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/FrendsPlatform/Netum.AtomiSign/tree/main/Netum.AtomiSign.Signatures</RepositoryUrl>
+        <RepositoryUrl>https://github.com/netum-integrations/Netum.AtomiSign/tree/main/Netum.AtomiSign.Signatures</RepositoryUrl>
         <Nullable>disable</Nullable>
         <NoWarn>
             CS1591, <!-- StyleCop SA1602 already enforces documentation for enum members -->

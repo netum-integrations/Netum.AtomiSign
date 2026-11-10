@@ -16,6 +16,7 @@ internal class TaskTests : TestBase
         using var server = new TestHttpServer("{\"id\":\"record\"}");
         var input = ValidCreateInput();
         input.Agents = "[{\"givenName\":\"Testinimi\",\"familyName\":\"Testisukunimi\",\"email\":\"testi@example.com\",\"role\":\"author\"}]";
+        input.Metadata = "{\"customerId\":\"12345\"}";
         input.RecordAuthentication = RecordAuthentication.Strong;
         input.SigningOrder = SigningOrder.Sequential;
         input.SignaturePage = SignaturePage.SignatureFields;
@@ -34,6 +35,7 @@ internal class TaskTests : TestBase
         Assert.That(root.GetProperty("signingOrder").GetString(), Is.EqualTo("sequential"));
         Assert.That(root.GetProperty("signaturePage").GetString(), Is.EqualTo("signature-fields"));
         Assert.That(root.GetProperty("agents")[0].GetProperty("givenName").GetString(), Is.EqualTo("Testinimi"));
+        Assert.That(root.GetProperty("metadata").GetProperty("customerId").GetString(), Is.EqualTo("12345"));
     }
 
     [Test]
@@ -117,6 +119,20 @@ internal class TaskTests : TestBase
 
         Assert.That(result.Success, Is.False);
         Assert.That(result.Error.Message, Does.Contain("Agents must be a JSON array"));
+    }
+
+    [Test]
+    public async Task NonObjectMetadataJson_ShouldReturnFailedResult()
+    {
+        var input = ValidCreateInput();
+        input.Metadata = "[]";
+        var options = DefaultOptions();
+        options.ThrowErrorOnFailure = false;
+
+        var result = await AtomiSign.Records(input, ApiTokenConnection("http://127.0.0.1:9"), options, CancellationToken.None);
+
+        Assert.That(result.Success, Is.False);
+        Assert.That(result.Error.Message, Does.Contain("Metadata must be a JSON object"));
     }
 
     private static Input ValidCreateInput() => new()

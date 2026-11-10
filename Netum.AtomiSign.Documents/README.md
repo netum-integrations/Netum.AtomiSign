@@ -1,9 +1,9 @@
 # Netum.AtomiSign.Documents
 
-Documents task
+Adds, retrieves, replaces, and deletes documents associated with AtomiSign records.
 
-[![Documents_build](https://github.com/FrendsPlatform/Netum.AtomiSign/actions/workflows/Documents_test_on_main.yml/badge.svg)](https://github.com/FrendsPlatform/Netum.AtomiSign/actions/workflows/Documents_test_on_main.yml)
-![Coverage](https://app-github-custom-badges.azurewebsites.net/Badge?key=FrendsPlatform/Netum.AtomiSign/Netum.AtomiSign.Documents|main)
+[![Documents_build](https://github.com/netum-integrations/Netum.AtomiSign/actions/workflows/Documents_test_on_main.yml/badge.svg)](https://github.com/netum-integrations/Netum.AtomiSign/actions/workflows/Documents_test_on_main.yml)
+![Coverage](https://app-github-custom-badges.azurewebsites.net/Badge?key=netum-integrations/Netum.AtomiSign/Netum.AtomiSign.Documents|main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 ## Installing
@@ -14,7 +14,7 @@ You can install the Task via Frends UI Task View.
 
 ### Clone a copy of the repository
 
-`git clone https://github.com/FrendsPlatform/Netum.AtomiSign.git`
+`git clone https://github.com/netum-integrations/Netum.AtomiSign.git`
 
 ### Build the project
 
