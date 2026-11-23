@@ -1,0 +1,52 @@
+name: PDF_release
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Build
+        run: dotnet build --configuration Release
+        working-directory: Netum.AtomiSign.PDF
+
+      - name: Test
+        run: dotnet test
+        working-directory: Netum.AtomiSign.PDF
+
+      - name: Extract version from .csproj
+        id: read_version
+        run: |
+          VERSION=$(grep -oPm1 '(?<=<Version>)[^<]+' Netum.AtomiSign.PDF/Netum.AtomiSign.PDF/Netum.AtomiSign.PDF.csproj)
+          if [ -z "$VERSION" ]; then
+            echo "::error::Didnt find <Version> in Netum.AtomiSign.PDF.csproj"
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Pack NuGet package
+        run: dotnet pack --configuration Release --output ./artifacts
+        working-directory: Netum.AtomiSign.PDF
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: PDF-v${{ steps.read_version.outputs.version }}
+          name: PDF v${{ steps.read_version.outputs.version }}
+          draft: false
+          prerelease: false
+          files: Netum.AtomiSign.PDF/artifacts/*.nupkg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

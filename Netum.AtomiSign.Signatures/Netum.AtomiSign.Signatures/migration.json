@@ -1,0 +1,12 @@
+﻿[
+  {
+    "Task": "Netum.AtomiSign.Signatures",
+    "Migrations": [
+      {
+        "Version": "1.0.0",
+        "Description": "",
+        "Migration": []
+      }
+    ]
+  }
+]
